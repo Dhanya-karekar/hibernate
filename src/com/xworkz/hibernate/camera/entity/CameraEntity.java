@@ -1,4 +1,5 @@
 package com.xworkz.hibernate.camera.entity;
+
 import java.io.Serializable;
 
 import javax.persistence.Column;
@@ -7,38 +8,37 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
 @Entity
 @Table(name = "camera_table")
 
-public class CameraEntity implements Serializable{
-	@Column(name= "c_id")
+public class CameraEntity implements Serializable {
+	@Column(name = "c_id")
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	@Column(name= "c_price")
+	@Column(name = "c_price")
 	private double price;
-	@Column(name= "c_warrenty")
+	@Column(name = "c_warrenty")
 	private int warrenty;
-	@Column(name= "c_filters")
+	@Column(name = "c_filters")
 	private int noOfFiltersEffect;
-	@Column(name= "c_wifi")
+	@Column(name = "c_wifi")
 	private boolean isWIFI;
-	@Column(name= "c_type")
+	@Column(name = "c_type")
 	private String type;
-	@Column(name= "c_country")
+	@Column(name = "c_country")
 	private String countryOfOrigin;
-	@Column(name= "c_weight")
+	@Column(name = "c_weight")
 	private float weight;
-	@Column(name= "c_focus")
+	@Column(name = "c_focus")
 	private boolean isAutoFocus;
-	@Column(name= "c_flash")
+	@Column(name = "c_flash")
 	private String flashModes;
-	
-	public CameraEntity(){
-		
+
+	public CameraEntity() {
+
 	}
-	
-	
 
 	public CameraEntity(int id, double price, int warrenty, int noOfFiltersEffect, boolean isWIFI, String type,
 			String countryOfOrigin, float weight, boolean isAutoFocus, String flashModes) {
@@ -55,7 +55,19 @@ public class CameraEntity implements Serializable{
 		this.flashModes = flashModes;
 	}
 
-
+	public CameraEntity(double price, int warrenty, int noOfFiltersEffect, boolean isWIFI, String type,
+			String countryOfOrigin, float weight, boolean isAutoFocus, String flashModes) {
+		super();
+		this.price = price;
+		this.warrenty = warrenty;
+		this.noOfFiltersEffect = noOfFiltersEffect;
+		this.isWIFI = isWIFI;
+		this.type = type;
+		this.countryOfOrigin = countryOfOrigin;
+		this.weight = weight;
+		this.isAutoFocus = isAutoFocus;
+		this.flashModes = flashModes;
+	}
 
 	@Override
 	public String toString() {
@@ -63,8 +75,6 @@ public class CameraEntity implements Serializable{
 				+ noOfFiltersEffect + ", isWIFI=" + isWIFI + ", type=" + type + ", countryOfOrigin=" + countryOfOrigin
 				+ ", weight=" + weight + ", isAutoFocus=" + isAutoFocus + ", flashModes=" + flashModes + "]";
 	}
-
-
 
 	@Override
 	public int hashCode() {
@@ -84,8 +94,6 @@ public class CameraEntity implements Serializable{
 		result = prime * result + Float.floatToIntBits(weight);
 		return result;
 	}
-
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -128,128 +136,83 @@ public class CameraEntity implements Serializable{
 		return true;
 	}
 
-
-
 	public int getId() {
 		return id;
 	}
-
-
 
 	public void setId(int id) {
 		this.id = id;
 	}
 
-
-
 	public double getPrice() {
 		return price;
 	}
-
-
 
 	public void setPrice(double price) {
 		this.price = price;
 	}
 
-
-
 	public int getWarrenty() {
 		return warrenty;
 	}
-
-
 
 	public void setWarrenty(int warrenty) {
 		this.warrenty = warrenty;
 	}
 
-
-
 	public int getNoOfFiltersEffect() {
 		return noOfFiltersEffect;
 	}
-
-
 
 	public void setNoOfFiltersEffect(int noOfFiltersEffect) {
 		this.noOfFiltersEffect = noOfFiltersEffect;
 	}
 
-
-
 	public boolean isWIFI() {
 		return isWIFI;
 	}
-
-
 
 	public void setWIFI(boolean isWIFI) {
 		this.isWIFI = isWIFI;
 	}
 
-
-
 	public String getType() {
 		return type;
 	}
-
-
 
 	public void setType(String type) {
 		this.type = type;
 	}
 
-
-
 	public String getCountryOfOrigin() {
 		return countryOfOrigin;
 	}
-
-
 
 	public void setCountryOfOrigin(String countryOfOrigin) {
 		this.countryOfOrigin = countryOfOrigin;
 	}
 
-
-
 	public float getWeight() {
 		return weight;
 	}
-
-
 
 	public void setWeight(float weight) {
 		this.weight = weight;
 	}
 
-
-
 	public boolean isAutoFocus() {
 		return isAutoFocus;
 	}
-
-
 
 	public void setAutoFocus(boolean isAutoFocus) {
 		this.isAutoFocus = isAutoFocus;
 	}
 
-
-
 	public String getFlashModes() {
 		return flashModes;
 	}
 
-
-
 	public void setFlashModes(String flashModes) {
 		this.flashModes = flashModes;
 	}
-	
-	
-	
-	
-
 }
